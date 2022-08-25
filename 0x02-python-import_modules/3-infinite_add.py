@@ -2,9 +2,9 @@
 # 3-infinite_add.py
 # Albert G
 
+
 def infinite_addition(argv):
     """ Computes the sum of all its arguments
-    
     Args:
         argv: list of command line arguments
 
@@ -20,6 +20,7 @@ def infinite_addition(argv):
             sum = sum + int(argv[i])
 
     return (sum)
+
 
 if __name__ == "__main__":
     import sys
