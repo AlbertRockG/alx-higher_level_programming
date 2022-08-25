@@ -14,6 +14,7 @@ def print_args(argv):
         for i in range(1, len(argv)):
             print("{:d}: {:s}".format(i, argv[i]))
 
+
 if __name__ == "__main__":
     import sys
     print_args(sys.argv)
