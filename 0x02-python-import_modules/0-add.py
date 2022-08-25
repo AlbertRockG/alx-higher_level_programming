@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # 0-add.py
 # Albert G
-if __name__== "__main__":
+if __name__ == "__main__":
     """Print the sum of a and b."""
     from add_0 import add
     a = 1
