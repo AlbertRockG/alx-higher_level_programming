@@ -7,12 +7,12 @@ def print_args(argv):
     if (len(argv) <= 1):
         print("0 arguments.")
     elif (len(argv) == 2):
-        print("{} argument:".format(len(argv) - 1))
-        print("1: {}".format(argv[1]))
+        print("{:d} argument:".format(len(argv) - 1))
+        print("1: {:d}".format(argv[1]))
     else:
-        print("{} arguments:".format(len(argv) - 1))
+        print("{:d} arguments:".format(len(argv) - 1))
         for i in range(1, len(argv)):
-            print("{}: {}".format(i, argv[i]))
+            print("{:d}: {:d}".format(i, argv[i]))
 
 if __name__ == "__main__":
     import sys
