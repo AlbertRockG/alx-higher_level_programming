@@ -3,7 +3,7 @@
 # AlbertG (rafgangbadja@gmail.com)
 
 def safe_print_list_integers(my_list=[], x=0):
-    """Prints the first x elements of a list and only integers. 
+    """Prints the first x elements of a list and only integers.
 
     Args:
         my_list (list): The given list.
