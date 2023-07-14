@@ -11,6 +11,9 @@ def pascal_triangle(n):
     Args:
         n (int): The number of row of the Pascal's triangle.
     """
+    if n <= 0:
+        return []
+
     triangles = []
     for i in range(n):
         next_row = []
