@@ -109,29 +109,27 @@ class Rectangle(Base):
                 - 5th argument represents y attribute.
             **kargs (dict): New key/value pairs of attributes.
         """
+        if args is None:
+            return
+        
         if args and len(args):
-            a = 0
-            for arg in args:
-                if a == 0:
-                    if args is None:
-                        self.__init__(
-                            self.__width, self.__height, self.__x, self.__y
-                            )
-                    else:
-                        self.id
-                elif a == 1:
-                    self.__width = arg
-                elif a == 2:
-                    self.__height = arg
-                elif a == 3:
-                    self.__x = arg
-                elif a == 4:
-                    self.__y = arg
-                a += 1
+            num_args = len(args)
+            if num_args >= 1:
+                self.id = args[0]
+            if num_args >= 2:
+                self.__width = args[1]
+            if num_args >= 3:
+                self.__height = args[2]
+            if num_args >= 4:
+                self.__x = args[3]
+            if num_args >= 5:
+                self.__y = args[4]
 
         elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
-                if k == "width":
+                if k == "id":
+                    self.id = v
+                elif k == "width":
                     self.__width = v
                 elif k == "height":
                     self.__height = v
