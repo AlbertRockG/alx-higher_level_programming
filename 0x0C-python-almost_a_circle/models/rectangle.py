@@ -111,7 +111,7 @@ class Rectangle(Base):
         """
         if args is None:
             return
-        
+
         if args and len(args):
             num_args = len(args)
             if num_args >= 1:
