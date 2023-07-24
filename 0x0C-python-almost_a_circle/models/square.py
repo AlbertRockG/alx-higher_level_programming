@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # square.py
 # AlbertRockG
+"""Defines a Square class."""
 from models.rectangle import Rectangle
 
 
@@ -39,31 +40,30 @@ class Square(Rectangle):
                 - 4th argument represents y attribute
             **kwargs (dict): New key/value pairs of attributes.
         """
-        if args and len(args) != 0:
-            a = 0
-            for arg in args:
-                if a == 0:
-                    if arg is None:
-                        self.__init__(self.__size, self.__x, self.__y)
-                    else:
-                        self.id = arg
-                elif a == 1:
-                    self.__size = arg
-                elif a == 2:
-                    self.__x = arg
-                elif a == 3:
-                    self.__y = arg
-                a += 1
+        if args is None:
+            return
+
+        if args and len(args):
+            num_args = len(args)
+            if num_args >= 1:
+                self.id = args[0]
+            if num_args >= 2:
+                self.__width = args[1]
+            if num_args >= 3:
+                self.__height = args[2]
+            if num_args >= 4:
+                self.__x = args[3]
+            if num_args >= 5:
+                self.__y = args[4]
 
         elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
-                    if v is None:
-                        self.__init__(self.__size, self.__x, self.__y)
-                    else:
-                        self.id = v
-                elif k == "size":
-                    self.__size = v
+                    self.id = v
+                elif k == "width":
+                    self.__width = v
+                elif k == "height":
+                    self.__height = v
                 elif k == "x":
                     self.__x = v
                 elif k == "y":
@@ -71,12 +71,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Return the dictionary representation of the Square."""
-        return {
-            "id": self.id,
-            "size": self.__width,
-            "x": self.__x,
-            "y": self.__y
-        }
+        return self.__dict__
 
     def __str__(self):
         """Return the print() and str() representation of a Square."""
